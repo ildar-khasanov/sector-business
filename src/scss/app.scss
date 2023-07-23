@@ -1,0 +1,121 @@
+@import "libs/normalize";
+
+.container {
+    max-width: 1077px;
+    @media only screen and (max-width: 430px) {
+        padding-right: 5px !important;
+        padding-left: 5px !important;
+    }
+}
+
+.table {
+    thead {
+        color: #fff;
+        th {
+            padding: 18px !important;
+            @media only screen and (max-width: 430px) {
+                padding: 9px 1px 9px 6px !important;
+            }
+
+            span {
+                cursor: pointer;
+                display: flex;
+
+                i {
+                    padding-top: -2px;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td,
+            th {
+                border-right: 1px solid #e3e6ec;
+            }
+        }
+        .table-th {
+            padding: 41px 51px 28px 51px;
+            @media only screen and (max-width: 530px) {
+                padding: 29px 29px 21px 29px;
+            }
+        }
+    }
+
+    &-primary {
+        background-color: #474955;
+    }
+}
+
+.pagination-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 45px;
+    font-size: 25px;
+
+    ul {
+        display: flex;
+        list-style: none;
+        column-gap: 12px;
+        font-size: 18px;
+        font-style: italic;
+        li {
+            cursor: pointer;
+        }
+        .active {
+            color: #7ebc3c;
+        }
+    }
+    div {
+        cursor: pointer;
+        font-size: 24px;
+        font-weight: 500;
+        color: #474955;
+
+        @media only screen and (max-width: 570px) {
+            display: none;
+        }
+    }
+    .disabled {
+        cursor: text;
+        color: #ccc;
+    }
+
+    @media only screen and (max-width: 570px) {
+        justify-content: center;
+        padding: 0px;
+    }
+}
+
+.search {
+    margin: 15px 0;
+    position: relative;
+    max-width: 631px;
+    input {
+        height: 52px;
+        width: 100%;
+
+        background-color: #5a5c66;
+        outline: none;
+        border: none;
+        color: #b2b7bf;
+        font-size: 14px;
+        padding-left: 26px;
+        color: #fff;
+
+        &::placeholder {
+            color: #b2b7bf;
+        }
+    }
+    i {
+        position: absolute;
+        top: 50%;
+        margin-top: -0.625em;
+        right: 16px;
+        width: 21px;
+        height: 21px;
+        color: #fff;
+    }
+}
