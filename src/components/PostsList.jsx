@@ -27,27 +27,33 @@ const PostsList = () => {
                 type="text"
                 placeholder="Поиск по таблице"
             />
-            <table className="table">
-                <thead className="table-primary text-white">
-                    <tr className="text-white">
-                        <TableHeader title="ID" order="id" />
-                        <TableHeader title="Заголовок" order="title" />
-                        <TableHeader title="Описание" order="body" />
-                    </tr>
-                </thead>
-                <tbody className="table-bordered">
-                    {posts.map((post) => (
-                        <tr key={post.id}>
-                            <th className="table-th" scope="row">
-                                {post.id}
-                            </th>
-                            <td>{post.title}</td>
-                            <td>{post.body}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-            <Pagination search={search} />
+            {posts.length === 0 ? (
+                "Увы, по данному запросу постов не найдено"
+            ) : (
+                <>
+                    <table className="table">
+                        <thead className="table-primary text-white">
+                            <tr className="text-white">
+                                <TableHeader title="ID" order="id" />
+                                <TableHeader title="Заголовок" order="title" />
+                                <TableHeader title="Описание" order="body" />
+                            </tr>
+                        </thead>
+                        <tbody className="table-bordered">
+                            {posts.map((post) => (
+                                <tr key={post.id}>
+                                    <th className="table-th" scope="row">
+                                        {post.id}
+                                    </th>
+                                    <td>{post.title}</td>
+                                    <td>{post.body}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    <Pagination search={search} />
+                </>
+            )}
         </div>
     );
 };

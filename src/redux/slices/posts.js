@@ -12,8 +12,8 @@ export const fetchPosts = createAsyncThunk(
             const totalCount = Number(headers["x-total-count"]);
             return { data, totalCount, page };
         } catch (error) {
-            const { data, status } = error.response;
-            if (status === 500) return rejectWithValue(data);
+            const { message } = error;
+            return rejectWithValue(message);
         }
     }
 );
